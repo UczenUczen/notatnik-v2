@@ -13,11 +13,11 @@ Program jest przeznaczony dla osób, które chcą szybko zapisywać i przechowyw
 - Umożliwia tworzenie notatek zawierających tytuł i treść.
 - Zapisuje notatki w lokalnym pliku `notatki.md`.
 - Przechowuje notatki w formacie Markdown.
-- Zapisuje datę i godzinę utworzenia notatki.
+- Zapisuje datę i godzinę utworzenia notatki w formacie `RRRR-MM-DD GG:MM`, używając czasu lokalnego komputera.
 - Umieszcza najnowsze notatki na początku pliku.
 - Obsługuje polskie znaki.
 - Odczytuje wcześniej zapisane notatki po ponownym uruchomieniu programu.
-- Informuje użytkownika o błędach podczas zapisywania danych.
+- Informuje użytkownika o błędach podczas odczytu i zapisu danych.
 
 ## 4. Czego nie robi
 
@@ -25,12 +25,13 @@ Program jest przeznaczony dla osób, które chcą szybko zapisywać i przechowyw
 - Nie wymaga połączenia z Internetem do podstawowego działania.
 - Nie przechowuje notatek w zewnętrznych usługach ani w chmurze.
 - Nie wymaga korzystania z konta użytkownika.
+- W pierwszej wersji nie umożliwia edytowania, usuwania ani wyszukiwania zapisanych notatek.
 
 ## 5. Kryteria akceptacji
 
 ### K1. Zapisywanie notatek
 
-Kiedy użytkownik zapisuje notatkę z tytułem i treścią, to notatka zostaje dodana do lokalnego pliku `notatki.md`.
+Kiedy użytkownik zapisuje notatkę z tytułem i treścią, to notatka zostaje dodana do lokalnego pliku `notatki.md` w ustalonym formacie Markdown.
 
 Sprawdzenie: utworzyć notatkę, zapisać ją i sprawdzić zawartość pliku.
 
@@ -58,18 +59,24 @@ Kiedy użytkownik próbuje zapisać notatkę bez tytułu lub bez treści, to pro
 
 Sprawdzenie: spróbować zapisać notatkę bez tytułu, a następnie bez treści, i sprawdzić, czy plik nie został zmieniony.
 
-### K6. Błąd zapisu
+### K6. Brak pliku
+
+Kiedy plik `notatki.md` jeszcze nie istnieje, to program uruchamia się z pustą listą notatek i tworzy plik podczas pierwszego poprawnego zapisu.
+
+Sprawdzenie: uruchomić program bez pliku, zapisać pierwszą notatkę i sprawdzić, czy plik został utworzony.
+
+### K7. Błąd zapisu
 
 Kiedy podczas zapisywania wystąpi błąd, to program informuje użytkownika o problemie w języku polskim i nie usuwa wcześniej zapisanych notatek.
 
 Sprawdzenie: wywołać sytuację uniemożliwiającą zapis i sprawdzić komunikat oraz zawartość pliku.
 
-### K7. Zablokowany plik
+### K8. Zablokowany plik
 
 Kiedy plik `notatki.md` jest otwarty w innym programie i nie można go zmodyfikować, to Notatnik informuje o problemie i nie powoduje utraty danych.
 
-Sprawdzenie: otworzyć plik w sposób uniemożliwiający jego zapis, spróbować zapisać notatkę i sprawdzić komunikat oraz zawartość pliku.
+Sprawdzenie: zablokować możliwość zapisu pliku, spróbować zapisać notatkę i sprawdzić komunikat oraz zawartość pliku.
 
 ## 6. Do ustalenia
 
-Na ten moment nie ma nierozstrzygniętych kwestii. Przyjęto, że każda zapisywana notatka musi mieć niepusty tytuł i treść, a błędy zapisu nie mogą powodować utraty wcześniejszych danych.
+Na ten moment nie ma nierozstrzygniętych kwestii dotyczących zakresu pierwszej wersji programu. Edytowanie, usuwanie i wyszukiwanie notatek zostały wyłączone z jej zakresu.
