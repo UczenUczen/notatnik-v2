@@ -79,4 +79,4 @@ Sprawdzenie: zablokować możliwość zapisu pliku, spróbować zapisać notatk�
 
 ## 6. Do ustalenia
 
-Na ten moment nie ma nierozstrzygniętych kwestii dotyczących zakresu pierwszej wersji programu. Edytowanie, usuwanie i wyszukiwanie notatek zostały wyłączone z jej zakresu.
+ Co ma się stać, gdy plik notatki.md jest w chwili zapisu otwarty w innym programie i nie można go zmodyfikować?
